@@ -20,9 +20,6 @@ public class MainActivity extends AppCompatActivity {
     public void increment(View view) {
         TextView score = (TextView) findViewById(R.id.score);
         Button bt = (Button) findViewById(R.id.my_button);
-        this.cl = (ConstraintLayout) findViewById(R.id.constraintLayoutId);
-        cl.setMargins(100,100,100,100);
-        bt.setLayoutParams(cl);
         String s = score.getText().toString();
         int i = Integer.parseInt(s);
         score.setText(""+(i+1));
