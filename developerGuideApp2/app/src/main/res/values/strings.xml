@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">developerGuideApp</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="imageClick">Camera</string>
+    <string name="EnableLabeling">Labeling</string>
+</resources>
