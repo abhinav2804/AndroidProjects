@@ -73,12 +73,17 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(List<ImageLabel> imageLabels) {
                         for (ImageLabel label : imageLabels) {
-                            String text = label.getText();
-                            imageText.add(text);
+                            StringBuilder text = new StringBuilder(label.getText());
+                            text.append("\n");
                             float confidence = label.getConfidence();
+                            text.append(confidence);
+                            text.append("\n");
                             int index = label.getIndex();
+                            text.append(index);
+                            text.append("\n");
+                            imageText.add(text.toString());
                         }
-                        intent.putExtra(EXTRA_MESSAGE,imageText.get(0));
+                        intent.putStringArrayListExtra(EXTRA_MESSAGE,imageText);
                         startActivity(intent);
                     }
                 });
