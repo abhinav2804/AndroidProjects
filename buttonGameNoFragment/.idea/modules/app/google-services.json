@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1068121683723",
+    "firebase_url": "https://buttongamenofragment.firebaseio.com",
+    "project_id": "buttongamenofragment",
+    "storage_bucket": "buttongamenofragment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068121683723:android:791712c18908876c9d140e",
+        "android_client_info": {
+          "package_name": "com.example.buttongamenofragment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068121683723-p4funhg5hr2l059b5jc0dtg3g2nmjjgb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.buttongamenofragment",
+            "certificate_hash": "14e6b12a2b4b2305b06ee5e1ccdd01d215e70a7d"
+          }
+        },
+        {
+          "client_id": "1068121683723-htrn3vagvvtm7maob88a47trnph10jdb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzy7WlYQj4E08YKy9sWeejzfIs4fHUPTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068121683723-htrn3vagvvtm7maob88a47trnph10jdb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
