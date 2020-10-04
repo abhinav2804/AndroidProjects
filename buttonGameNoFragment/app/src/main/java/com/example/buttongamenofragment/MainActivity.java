@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     float dx, dy;
     int x, y;
-    ConstraintLayout cl;
+    ConstraintLayout cl = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +46,46 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         dx = displayMetrics.widthPixels;
         dy = displayMetrics.heightPixels;
-        x = (int)dx - 300;
-        y = (int)dy - 300;
+        x = (int)dx - 500;
+        y = (int)dy - 500;
+
+        cl = (ConstraintLayout) findViewById(R.id.constraintLayoutId);
+        cl.setOnTouchListener(new View.OnTouchListener() {
+            TextView score = (TextView) findViewById(R.id.score);
+            Button bt = (Button) findViewById(R.id.my_button);
+
+            Random rand = new Random();
+
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                int tx = (int) motionEvent.getX();
+                int ty = (int) motionEvent.getY();
+                int btx = (int) bt.getX();
+                int bty = (int) bt.getY();
+                boolean flag = true;
+                if (ty == bty && tx == btx) {
+                    int rand_int1 = rand.nextInt(x);
+                    int rand_int2 = rand.nextInt(y);
+
+                    //score.setText(""+rand_int1);
+                    //bt.getLocationOnScreen(posXY);
+                    bt.setX(rand_int1);
+                    bt.setY(rand_int2);
+                    String s = score.getText().toString();
+                    int i = Integer.parseInt(s);
+                    score.setText("" + (i + 1));
+                } else {
+                    String s = score.getText().toString();
+                    int i = Integer.parseInt(s);
+                    score.setText("" + (i - 1));
+                    return false;
+                }
+
+                return true;
+            }
+        });
+
     }
 
     public void increment(View view) {
@@ -54,16 +93,17 @@ public class MainActivity extends AppCompatActivity {
         Button bt = (Button) findViewById(R.id.my_button);
 
         Random rand = new Random();
-
+        
         int rand_int1 = rand.nextInt(x);
         int rand_int2 = rand.nextInt(y);
+
         //score.setText(""+rand_int1);
         //bt.getLocationOnScreen(posXY);
         bt.setX(rand_int1);
         bt.setY(rand_int2);
         String s = score.getText().toString();
         int i = Integer.parseInt(s);
-        score.setText(""+(i+1));
+        score.setText("" + (i + 1));
     }
 
 }
