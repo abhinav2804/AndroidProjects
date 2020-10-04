@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         dx = displayMetrics.widthPixels;
         dy = displayMetrics.heightPixels;
-        x = (int)dx - 500;
-        y = (int)dy - 500;
+        x = (int)dx - 240;
+        y = (int)dy - 200;
 
         cl = (ConstraintLayout) findViewById(R.id.constraintLayoutId);
         cl.setOnTouchListener(new View.OnTouchListener() {
@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
         
         int rand_int1 = rand.nextInt(x);
         int rand_int2 = rand.nextInt(y);
+
+        while (rand_int2 <= score.getY() + score.getHeight()) {
+            rand_int2 = rand.nextInt(y);
+        }
 
         //score.setText(""+rand_int1);
         //bt.getLocationOnScreen(posXY);
